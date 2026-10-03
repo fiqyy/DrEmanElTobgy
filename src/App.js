@@ -9,7 +9,6 @@ import {
   CheckCircle,
   Phone,
   Mail,
-  MapPin,
   Menu,
   X,
   Award,
