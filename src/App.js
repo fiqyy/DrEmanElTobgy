@@ -15,7 +15,7 @@ import {
   Activity
 } from 'lucide-react';
 
-const HERO_IMAGE_PATH = require('./assets/pics/tv.jpeg');
+const HERO_IMAGE_PATH = require('./assets/pics/logo2.jpeg');
 const DREMANSPEAKING = require('./assets/pics/sessionexplaining.jpeg');
 const TRAININGWORKSHOP = require('./assets/pics/tedtalks.jpeg');
 const INTROTOMETAHEALTH = require('./assets/vids/sample.mp4');
@@ -297,57 +297,8 @@ function App() {
                   display: 'block'
                 }}
               />
-
-              {/* Chic Glassmorphic Overlay Badge */}
-              <div
-                className="glass-badge-chic"
-                style={{
-                  position: 'absolute',
-                  bottom: '18px',
-                  left: '18px',
-                  right: '18px',
-                  borderRadius: '18px',
-                  padding: '12px 16px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '14px'
-                }}
-              >
-                {/* Badge Avatar / Secondary Image Thumbnail */}
-                <div
-                  style={{
-                    width: '44px',
-                    height: '44px',
-                    borderRadius: '50%',
-                    backgroundColor: '#566ad8',
-                    border: '2px solid #3ebcee',
-                    overflow: 'hidden',
-                    flexShrink: 0,
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    boxShadow: '0 4px 10px rgba(217, 70, 239, 0.25)'
-                  }}
-                >
-                  {typeof DREMANSPEAKING !== 'undefined' && DREMANSPEAKING ? (
-                    <img src={DREMANSPEAKING} alt="Dr. Eman Speaking" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                  ) : (
-                    <span style={{ fontSize: '1.2rem' }}>🌿</span>
-                  )}
-                </div>
-
-                <div>
-                  <h4 style={{ margin: 0, fontSize: '0.88rem', fontWeight: 700, color: '#0f172a', letterSpacing: '-0.01em' }}>
-                    Meta Health Mindset
-                  </h4>
-                  <p style={{ margin: 0, fontSize: '0.74rem', color: '#475569', fontWeight: 500 }}>
-                    Connecting organ systems with emotional root causes
-                  </p>
-                </div>
-              </div>
             </div>
           </div>
-
         </div>
       </section>
 
