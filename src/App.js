@@ -202,7 +202,7 @@ function App() {
                 marginBottom: '1.4rem'
               }}
             >
-              <span style={{ fontSize: '0.9rem' }}>✨</span> Certified Meta Health & Relationship Trainer
+              Certified Meta Health & Relationship Trainer
             </div>
 
             <h1 style={{ fontSize: 'clamp(2.3rem, 5.2vw, 3.6rem)', fontWeight: 800, color: '#0f172a', lineHeight: 1.18, marginBottom: '1.2rem', letterSpacing: '-0.02em' }}>
