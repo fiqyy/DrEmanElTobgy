@@ -12,8 +12,7 @@ import {
   Menu,
   X,
   Award,
-  Activity,
-  ArrowRight
+  Activity
 } from 'lucide-react';
 
 const HERO_IMAGE_PATH = require('./assets/pics/tv.jpeg');
@@ -143,14 +142,14 @@ function App() {
           </div>
 
           <span className="nav-brand-title">
-            Dr. Eman El Tobgy <span className="gradient-text">MetaHealth</span>
+            Eman El Tobgy <span className="gradient-text">MetaHealth</span>
           </span>
         </a>
 
         {/* Desktop Links */}
         <div className="desktop-menu">
           <a href="#home" style={{ color: '#1e293b', textDecoration: 'none', fontWeight: 600 }}>Home</a>
-          <a href="#about" style={{ color: '#1e293b', textDecoration: 'none', fontWeight: 600 }}>More About Dr Eman</a>
+          <a href="#about" style={{ color: '#1e293b', textDecoration: 'none', fontWeight: 600 }}>More About Eman</a>
           <a href="#services" style={{ color: '#1e293b', textDecoration: 'none', fontWeight: 600 }}>Specializations</a>
           <a href="#media" style={{ color: '#1e293b', textDecoration: 'none', fontWeight: 600 }}>Media & Sessions</a>
           <a href="#contact" className="gradient-btn" style={{ textDecoration: 'none', padding: '10px 20px', fontSize: '0.9rem' }}>Contact & Booking</a>
@@ -178,103 +177,179 @@ function App() {
         )}
       </nav>
 
-      {/* 1. HERO SECTION */}
-      <section id="home" style={{ paddingTop: '140px', paddingBottom: '80px', paddingLeft: '5%', paddingRight: '5%', position: 'relative', zIndex: 1 }}>
-        <div className="hero-grid" style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '3rem', alignItems: 'center', maxWidth: '1200px', margin: '0 auto' }}>
-          <div>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '6px 16px', borderRadius: '30px', background: '#fce7f3', border: '1px solid #f472b6', color: '#be185d', fontSize: '0.85rem', fontWeight: 700, marginBottom: '1.5rem' }}>
-              <Sparkles size={16} /> Certified Meta Health & Relationship Expert
+      {/* 1. HERO SECTION (Chic, Animated & Fully Responsive) */}
+      <section id="home" className="hero-section" style={{ position: 'relative' }}>
+        {/* Ambient Decorative Glow behind the card */}
+        <div className="hero-ambient-glow" />
+
+        <div className="hero-container" style={{ position: 'relative', zIndex: 1 }}>
+
+          {/* Left Side: Text Content & CTAs */}
+          <div className="hero-text-content hero-fade-in">
+            <div
+              className="hero-badge"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.6rem',
+                padding: '0.45rem 1.1rem',
+                background: 'rgba(251, 207, 232, 0.6)',
+                backdropFilter: 'blur(8px)',
+                border: '1px solid rgba(244, 114, 182, 0.3)',
+                color: '#9d174d',
+                borderRadius: '50px',
+                fontSize: '0.85rem',
+                fontWeight: 600,
+                letterSpacing: '0.02em',
+                marginBottom: '1.4rem'
+              }}
+            >
+              <span style={{ fontSize: '0.9rem' }}>✨</span> Certified Meta Health & Relationship Trainer
             </div>
-            <h1 style={{ fontSize: 'clamp(2.5rem, 5vw, 3.8rem)', fontWeight: 800, lineHeight: 1.15, marginBottom: '1.5rem', color: '#0f172a' }}>
-              Transform Your <span className="gradient-text">Emotional Health</span> & Relations
+
+            <h1 style={{ fontSize: 'clamp(2.3rem, 5.2vw, 3.6rem)', fontWeight: 800, color: '#0f172a', lineHeight: 1.18, marginBottom: '1.2rem', letterSpacing: '-0.02em' }}>
+              Transform Your <span className="gradient-text">Emotional Health</span> & Relationships
             </h1>
-            <p style={{ color: '#475569', fontSize: '1.15rem', marginBottom: '2rem', maxWidth: '560px', fontWeight: 500 }}>
+
+            <p style={{ color: '#475569', fontSize: '1.08rem', lineHeight: 1.65, marginBottom: '2.2rem', fontWeight: 400 }}>
               Integrating Meta Health principles and holistic relationship dynamics to unlock subconscious root causes, restore vitality, and build lasting interpersonal harmony.
             </p>
 
-            <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-              <a href="#contact" className="gradient-btn" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
-                Book Consultation <ArrowRight size={18} />
+            {/* CTA Buttons */}
+            <div className="hero-cta-group" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '2.8rem' }}>
+              <a
+                href="#contact"
+                className="btn-chic-primary"
+                style={{
+                  padding: '0.9rem 2rem',
+                  background: 'linear-gradient(135deg, #d946ef 0%, #8b5cf6 100%)',
+                  color: '#ffffff',
+                  borderRadius: '14px',
+                  fontWeight: 700,
+                  fontSize: '0.95rem',
+                  textDecoration: 'none',
+                  boxShadow: '0 10px 25px -5px rgba(217, 70, 239, 0.35)',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.5rem'
+                }}
+              >
+                <span>Book Consultation</span>
+                <span style={{ fontSize: '1.1rem' }}>→</span>
               </a>
-              <a href="#about" style={{ textDecoration: 'none', color: '#0f172a', padding: '14px 28px', borderRadius: '12px', background: '#ffffff', border: '1px solid #cbd5e1', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '0.5rem', boxShadow: '0 2px 10px rgba(0,0,0,0.04)' }}>
+              <a
+                href="#about"
+                style={{
+                  padding: '0.9rem 2rem',
+                  backgroundColor: '#ffffff',
+                  color: '#0f172a',
+                  border: '1px solid #e2e8f0',
+                  borderRadius: '14px',
+                  fontWeight: 600,
+                  fontSize: '0.95rem',
+                  textDecoration: 'none',
+                  transition: 'all 0.2s ease',
+                  boxShadow: '0 4px 12px rgba(0,0,0,0.03)'
+                }}
+              >
                 Learn More
               </a>
             </div>
 
-            <div style={{ display: 'flex', gap: '2.5rem', marginTop: '3rem', paddingTop: '2rem', borderTop: '1px solid #cbd5e1' }}>
+            {/* Social Proof Stats */}
+            <div className="hero-stats-group" style={{ display: 'flex', gap: '2.5rem', borderTop: '1px solid rgba(226, 232, 240, 0.8)', paddingTop: '1.6rem' }}>
               <div>
-                <div style={{ fontSize: '1.8rem', fontWeight: 800, color: '#9333ea' }}>10+</div>
-                <div style={{ color: '#475569', fontSize: '0.85rem', fontWeight: 600 }}>Years Experience</div>
+                <h3 style={{ fontSize: '1.7rem', fontWeight: 800, color: '#d946ef', margin: 0, letterSpacing: '-0.02em' }}>10+</h3>
+                <p style={{ fontSize: '0.82rem', color: '#64748b', margin: 0, fontWeight: 500 }}>Years Experience</p>
               </div>
               <div>
-                <div style={{ fontSize: '1.8rem', fontWeight: 800, color: '#db2777' }}>2,500+</div>
-                <div style={{ color: '#475569', fontSize: '0.85rem', fontWeight: 600 }}>Clients Trained</div>
+                <h3 style={{ fontSize: '1.7rem', fontWeight: 800, color: '#d946ef', margin: 0, letterSpacing: '-0.02em' }}>2,500+</h3>
+                <p style={{ fontSize: '0.82rem', color: '#64748b', margin: 0, fontWeight: 500 }}>Clients Trained</p>
               </div>
               <div>
-                <div style={{ fontSize: '1.8rem', fontWeight: 800, color: '#0284c7' }}>99%</div>
-                <div style={{ color: '#475569', fontSize: '0.85rem', fontWeight: 600 }}>Satisfaction Rate</div>
+                <h3 style={{ fontSize: '1.7rem', fontWeight: 800, color: '#d946ef', margin: 0, letterSpacing: '-0.02em' }}>98%</h3>
+                <p style={{ fontSize: '0.82rem', color: '#64748b', margin: 0, fontWeight: 500 }}>Satisfaction Rate</p>
               </div>
             </div>
           </div>
 
-          <div className="floating-anim">
-            <div className="glass-card" style={{ padding: '1.2rem', position: 'relative' }}>
-              {/* IMAGE CONTAINER WITH IMAGE FALLBACK STYLING */}
-              <div
+          {/* Right Side: Animated Photo Card */}
+          <div className="hero-image-wrapper">
+            <div
+              className="hero-float-card"
+              style={{
+                position: 'relative',
+                borderRadius: '28px',
+                overflow: 'hidden',
+                boxShadow: '0 25px 50px -12px rgba(15, 23, 42, 0.18)',
+                border: '6px solid #ffffff',
+                backgroundColor: '#0f172a'
+              }}
+            >
+              {/* Featured Photo */}
+              <img
+                src={HERO_IMAGE_PATH}
+                alt="Dr. Eman El Tobgy"
                 style={{
                   width: '100%',
-                  height: '100%',
-                  minHeight: '380px',
-                  borderRadius: '16px',
-                  overflow: 'hidden',
-                  position: 'relative',
-                  backgroundColor: '#f8fafc'
+                  height: 'auto',
+                  maxHeight: '460px',
+                  objectFit: 'cover',
+                  objectPosition: 'top center',
+                  display: 'block'
+                }}
+              />
+
+              {/* Chic Glassmorphic Overlay Badge */}
+              <div
+                className="glass-badge-chic"
+                style={{
+                  position: 'absolute',
+                  bottom: '18px',
+                  left: '18px',
+                  right: '18px',
+                  borderRadius: '18px',
+                  padding: '12px 16px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '14px'
                 }}
               >
-                <img
-                  src={HERO_IMAGE_PATH}
-                  alt="Dr. Eman"
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                    objectPosition: 'center',
-                    display: 'block'
-                  }}
-                  onError={(e) => {
-                    e.target.onerror = null;
-                    e.target.style.display = 'none';
-                    e.target.nextSibling.style.display = 'flex';
-                  }}
-                />
+                {/* Badge Avatar / Secondary Image Thumbnail */}
                 <div
                   style={{
-                    display: 'none',
-                    flexDirection: 'column',
+                    width: '44px',
+                    height: '44px',
+                    borderRadius: '50%',
+                    backgroundColor: '#fbcfe8',
+                    border: '2px solid #d946ef',
+                    overflow: 'hidden',
+                    flexShrink: 0,
+                    display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    height: '100%',
-                    minHeight: '380px',
-                    padding: '1.5rem',
-                    textAlign: 'center'
+                    boxShadow: '0 4px 10px rgba(217, 70, 239, 0.25)'
                   }}
                 >
-                  <p style={{ fontWeight: 700, color: '#0f172a', margin: 0 }}>Image not found</p>
-                  <span style={{ fontSize: '0.8rem', color: '#64748b', marginTop: '0.2rem' }}>
-                    Please verify: {HERO_IMAGE_PATH}
-                  </span>
+                  {typeof DREMANSPEAKING !== 'undefined' && DREMANSPEAKING ? (
+                    <img src={DREMANSPEAKING} alt="Dr. Eman Speaking" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  ) : (
+                    <span style={{ fontSize: '1.2rem' }}>🌿</span>
+                  )}
                 </div>
-              </div>
 
-              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginTop: '1.2rem', padding: '1rem', background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '12px' }}>
-                <Brain color="#db2777" size={28} />
                 <div>
-                  <h4 style={{ fontSize: '0.95rem', fontWeight: 700, color: '#0f172a' }}>Meta Health Mindset</h4>
-                  <p style={{ fontSize: '0.8rem', color: '#475569' }}>Connecting organ systems with emotional root causes.</p>
+                  <h4 style={{ margin: 0, fontSize: '0.88rem', fontWeight: 700, color: '#0f172a', letterSpacing: '-0.01em' }}>
+                    Meta Health Mindset
+                  </h4>
+                  <p style={{ margin: 0, fontSize: '0.74rem', color: '#475569', fontWeight: 500 }}>
+                    Connecting organ systems with emotional root causes
+                  </p>
                 </div>
               </div>
             </div>
           </div>
+
         </div>
       </section>
 
@@ -283,7 +358,7 @@ function App() {
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
             <h2 style={{ fontSize: '2.5rem', fontWeight: 800, marginBottom: '1rem', color: '#0f172a' }}>
-              More About <span className="gradient-text">Dr. Eman El Tobgy</span>
+              More About <span className="gradient-text">Eman El Tobgy</span>
             </h2>
             <p style={{ color: '#475569', maxWidth: '600px', margin: '0 auto', fontSize: '1.05rem' }}>
               Dedicated to empowering individuals and couples through integrative mind-body science and relational transformation.
