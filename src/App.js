@@ -15,7 +15,7 @@ import {
   Activity
 } from 'lucide-react';
 
-const HERO_IMAGE_PATH = require('./assets/pics/logo2.jpeg');
+const HERO_IMAGE_PATH = require('./assets/pics/logo1.jpeg');
 const DREMANSPEAKING = require('./assets/pics/sessionexplaining.jpeg');
 const TRAININGWORKSHOP = require('./assets/pics/tedtalks.jpeg');
 const INTROTOMETAHEALTH = require('./assets/vids/sample.mp4');
