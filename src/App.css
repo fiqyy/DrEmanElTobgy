@@ -1,7 +1,205 @@
+/* =========================================================
+   APP-WIDE ROYAL BLUE COMPONENT STYLES
+   ========================================================= */
+
+/* Top Navigation Bar */
+.navbar,
+header,
+.top-header {
+  background-color: var(--primary-blue) !important;
+  color: #ffffff !important;
+}
+
+.navbar a,
+header a,
+.top-header a {
+  color: #ffffff !important;
+  transition: opacity 0.2s ease;
+}
+
+.navbar a:hover,
+header a:hover,
+.top-header a:hover {
+  opacity: 0.85;
+}
+
+/* Headings & Text Formatting */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.section-title {
+  color: var(--heading-blue) !important;
+  font-weight: 700;
+}
+
+p,
+span,
+li {
+  color: var(--text-dark);
+}
+
+/* Section Separators (Matching the reference layout) */
+hr,
+.section-divider {
+  border: 0;
+  border-top: 1px solid var(--border-blue) !important;
+  margin: 1.5rem 0;
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%) !important;
+  padding: 120px 5% 60px 5%;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.hero-text-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.hero-badge {
+  background-color: var(--accent-light-blue) !important;
+  color: var(--heading-blue) !important;
+  border: 1px solid rgba(59, 113, 202, 0.3) !important;
+  border-radius: 50px;
+  padding: 0.45rem 1.1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.4rem;
+}
+
+/* Buttons */
+/* Primary Action Buttons (Book Session, Send, Submit) */
+.btn-chic-primary,
+.btn-primary,
+.gradient-btn,
+button[type="submit"],
+.hero-cta-group a:first-child {
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--heading-blue) 100%) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 12px !important;
+  padding: 0.9rem 1.8rem !important;
+  font-weight: 700 !important;
+  font-size: 0.95rem !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.6rem !important;
+  text-decoration: none !important;
+  box-shadow: 0 8px 20px -4px rgba(59, 113, 202, 0.35) !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+/* Polished Hover & Lift Effect for Primary CTAs */
+.btn-chic-primary:hover,
+.btn-primary:hover,
+.gradient-btn:hover,
+button[type="submit"]:hover,
+.hero-cta-group a:first-child:hover {
+  background: linear-gradient(135deg, var(--primary-blue-hover) 0%, #153ea4 100%) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 14px 28px -4px rgba(29, 78, 216, 0.45) !important;
+  color: #ffffff !important;
+}
+
+/* Hero Image Desktop & Mobile Wrapper */
+.hero-image-wrapper {
+  flex: 1;
+  max-width: 480px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+.hero-float-card {
+  width: 100%;
+  border-radius: 28px;
+  overflow: hidden;
+  border: 4px solid #ffffff;
+  box-shadow: 0 20px 45px -10px rgba(15, 23, 42, 0.15);
+  background-color: #0f172a;
+  position: relative;
+  animation: gentleFloat 6s ease-in-out infinite;
+}
+
+.hero-float-card img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+/* Glassmorphism Badge Accent */
+.glass-badge-chic {
+  background: rgba(255, 255, 255, 0.92) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(59, 113, 202, 0.25) !important;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08) !important;
+}
+
+@keyframes gentleFloat {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 100px 5% 40px 5%;
+  }
+
+  .hero-container {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .hero-text-content {
+    max-width: 100%;
+  }
+
+  .hero-float-card img {
+    height: 400px;
+  }
+}
+
 /* Bright Clean White Glass Cards with High-Contrast Navy Text */
 .glass-card {
   background: #ffffff;
-  border: 1px solid #e2e8f0;
+  border: 1px solid #3ebcee;
   border-radius: 20px;
   box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.08);
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -9,8 +207,8 @@
 
 .glass-card:hover {
   transform: translateY(-5px);
-  border-color: #c084fc;
-  box-shadow: 0 20px 35px -10px rgba(168, 85, 247, 0.18);
+  border-color: #3ebcee;
+  box-shadow: 0 20px 35px -10px rgba(85, 242, 247, 0.473);
 }
 
 .glass-nav {
@@ -36,28 +234,11 @@
 
 /* Health & Joy Gradient Text (Purple to Vibrant Pink) */
 .gradient-text {
-  background: linear-gradient(135deg, #7e22ce 0%, #db2777 100%);
+  background: linear-gradient(135deg, rgb(8, 168, 168) 0%, #566ad8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* Gradient Action Button */
-.gradient-btn {
-  background: linear-gradient(135deg, #9333ea 0%, #ec4899 100%);
-  color: #ffffff !important;
-  border: none;
-  border-radius: 12px;
-  font-weight: 700;
-  padding: 14px 28px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 6px 20px rgba(147, 51, 234, 0.3);
-}
-
-.gradient-btn:hover {
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 10px 25px rgba(236, 72, 153, 0.4);
-}
 
 /* Light Blue & Pink Media Placeholders */
 .media-placeholder-image {
@@ -65,8 +246,8 @@
   height: 100%;
   min-height: 280px;
   border-radius: 16px;
-  background: linear-gradient(135deg, #f0f9ff, #fce7f3);
-  border: 2px dashed #c084fc;
+  background: linear-gradient(135deg, #f0f9ff, #566ad8);
+  border: 2px dashed #3ebcee;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -80,8 +261,8 @@
   width: 100%;
   height: 220px;
   border-radius: 16px;
-  background: linear-gradient(135deg, #f0f9ff, #fce7f3);
-  border: 2px dashed #ec4899;
+  background: linear-gradient(135deg, #f0f9ff, #566ad8);
+  border: 2px dashed #3ebcee;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -93,8 +274,8 @@
 }
 
 .media-placeholder-video:hover {
-  border-color: #9333ea;
-  background: linear-gradient(135deg, #e0f2fe, #fbcfe8);
+  border-color: #4533ea;
+  background: linear-gradient(135deg, #e0f2fe, #566ad8);
 }
 
 /* Floating Animation */
@@ -127,7 +308,7 @@
 .glow-orb-purple {
   width: 400px;
   height: 400px;
-  background: #e9d5ff;
+  background: #566ad8;
   top: 5%;
   left: -80px;
 }
@@ -135,7 +316,7 @@
 .glow-orb-pink {
   width: 450px;
   height: 450px;
-  background: #fbcfe8;
+  background: #566ad8;
   top: 35%;
   right: -100px;
 }
@@ -221,17 +402,6 @@
   max-width: 600px;
 }
 
-.hero-image-wrapper {
-  flex: 1;
-  max-width: 480px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 12px;
-  /* Adds breathing room so outer borders/shadows aren't clipped */
-  box-sizing: border-box;
-}
 
 /* Mobile Adjustments (768px and below) */
 @media (max-width: 768px) {
@@ -314,7 +484,7 @@
 
 .hero-float-card:hover {
   transform: translateY(-6px) scale(1.01);
-  box-shadow: 0 30px 60px -12px rgba(217, 70, 239, 0.25) !important;
+  box-shadow: 0 30px 60px -12px rgba(102, 205, 236, 0.699) !important;
 }
 
 @keyframes gentleFloat {
@@ -395,5 +565,5 @@
 
 .btn-chic-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 15px 30px -5px rgba(217, 70, 239, 0.45) !important;
+  box-shadow: 0 15px 30px -5px rgba(70, 73, 239, 0.45) !important;
 }

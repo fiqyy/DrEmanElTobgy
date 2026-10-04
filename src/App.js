@@ -29,7 +29,7 @@ const WHATSAPP_NUMBER = '201200096266'; // Mobile Number that recieves Whatsapp 
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [formData, setFormData] = useState({ name: '', email: '', phone: '', service: '', message: '' });
+  const [formData, setFormData] = useState({ name: '', phone: '', message: '' });
   const [formSubmitted, setFormSubmitted] = useState(false);
 
   useEffect(() => {
@@ -49,9 +49,7 @@ function App() {
 
     const textMessage = `*New Consultation Request*%0A%0A` +
       `*Name:* ${formData.name}%0A` +
-      `*Email:* ${formData.email}%0A` +
       `*Phone:* ${formData.phone}%0A` +
-      `*Service Requested:* ${formData.service || 'Not Specified'}%0A` +
       `*Message:* ${formData.message}`;
 
     const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
@@ -108,14 +106,14 @@ function App() {
               width: '42px',
               height: '42px',
               borderRadius: '12px',
-              background: 'linear-gradient(135deg, rgba(255,255,255,0.9), rgba(243,232,255,0.8))',
+              background: 'linear-gradient(135deg, rgba(255,255,255,0.9), rgba(231, 231, 231, 0.8))',
               padding: '5px',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               flexShrink: 0,
               boxShadow: '0 4px 12px rgba(147, 51, 234, 0.15)',
-              border: '1px solid rgba(236, 72, 153, 0.2)'
+              border: '1px solid rgba(0, 208, 245, 0.65)'
             }}
           >
             <img
@@ -137,7 +135,7 @@ function App() {
             />
             <Activity
               size={22}
-              style={{ color: '#9333ea', display: 'none' }}
+              style={{ color: '#33e4eaff', display: 'none' }}
             />
           </div>
 
@@ -169,7 +167,7 @@ function App() {
         {mobileMenuOpen && (
           <div className="nav-menu-mobile">
             <a href="#home" onClick={() => setMobileMenuOpen(false)} style={{ color: '#0f172a', textDecoration: 'none', fontSize: '1.05rem', fontWeight: 600 }}>Home</a>
-            <a href="#about" onClick={() => setMobileMenuOpen(false)} style={{ color: '#0f172a', textDecoration: 'none', fontSize: '1.05rem', fontWeight: 600 }}>More About Dr Eman</a>
+            <a href="#about" onClick={() => setMobileMenuOpen(false)} style={{ color: '#0f172a', textDecoration: 'none', fontSize: '1.05rem', fontWeight: 600 }}>More About Eman</a>
             <a href="#services" onClick={() => setMobileMenuOpen(false)} style={{ color: '#0f172a', textDecoration: 'none', fontSize: '1.05rem', fontWeight: 600 }}>Specializations</a>
             <a href="#media" onClick={() => setMobileMenuOpen(false)} style={{ color: '#0f172a', textDecoration: 'none', fontSize: '1.05rem', fontWeight: 600 }}>Media & Sessions</a>
             <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="gradient-btn" style={{ textDecoration: 'none', textAlign: 'center' }}>Contact & Booking</a>
@@ -222,7 +220,7 @@ function App() {
                 className="btn-chic-primary"
                 style={{
                   padding: '0.9rem 2rem',
-                  background: 'linear-gradient(135deg, #d946ef 0%, #8b5cf6 100%)',
+                  background: 'linear-gradient(135deg, #46cdefff 0%, #5e4dffff 100%)',
                   color: '#ffffff',
                   borderRadius: '14px',
                   fontWeight: 700,
@@ -259,15 +257,15 @@ function App() {
             {/* Social Proof Stats */}
             <div className="hero-stats-group" style={{ display: 'flex', gap: '2.5rem', borderTop: '1px solid rgba(226, 232, 240, 0.8)', paddingTop: '1.6rem' }}>
               <div>
-                <h3 style={{ fontSize: '1.7rem', fontWeight: 800, color: '#d946ef', margin: 0, letterSpacing: '-0.02em' }}>10+</h3>
+                <h3 style={{ fontSize: '1.7rem', fontWeight: 800, color: '#46cdefff', margin: 0, letterSpacing: '-0.02em' }}>10+</h3>
                 <p style={{ fontSize: '0.82rem', color: '#64748b', margin: 0, fontWeight: 500 }}>Years Experience</p>
               </div>
               <div>
-                <h3 style={{ fontSize: '1.7rem', fontWeight: 800, color: '#d946ef', margin: 0, letterSpacing: '-0.02em' }}>2,500+</h3>
+                <h3 style={{ fontSize: '1.7rem', fontWeight: 800, color: '#46cdefff', margin: 0, letterSpacing: '-0.02em' }}>2,500+</h3>
                 <p style={{ fontSize: '0.82rem', color: '#64748b', margin: 0, fontWeight: 500 }}>Clients Trained</p>
               </div>
               <div>
-                <h3 style={{ fontSize: '1.7rem', fontWeight: 800, color: '#d946ef', margin: 0, letterSpacing: '-0.02em' }}>98%</h3>
+                <h3 style={{ fontSize: '1.7rem', fontWeight: 800, color: '#46cdefff', margin: 0, letterSpacing: '-0.02em' }}>99%</h3>
                 <p style={{ fontSize: '0.82rem', color: '#64748b', margin: 0, fontWeight: 500 }}>Satisfaction Rate</p>
               </div>
             </div>
@@ -321,8 +319,8 @@ function App() {
                     width: '44px',
                     height: '44px',
                     borderRadius: '50%',
-                    backgroundColor: '#fbcfe8',
-                    border: '2px solid #d946ef',
+                    backgroundColor: '#566ad8',
+                    border: '2px solid #3ebcee',
                     overflow: 'hidden',
                     flexShrink: 0,
                     display: 'flex',
@@ -358,7 +356,7 @@ function App() {
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
             <h2 style={{ fontSize: '2.5rem', fontWeight: 800, marginBottom: '1rem', color: '#0f172a' }}>
-              More About <span className="gradient-text">Eman El Tobgy</span>
+              More About <span className="gradient-text"> <br />Eman ElTobgy</span>
             </h2>
             <p style={{ color: '#475569', maxWidth: '600px', margin: '0 auto', fontSize: '1.05rem' }}>
               Dedicated to empowering individuals and couples through integrative mind-body science and relational transformation.
@@ -466,23 +464,23 @@ function App() {
                 Bridging Mind, Body, and Relational Wellbeing
               </h3>
               <p style={{ color: '#334155', marginBottom: '1.2rem', lineHeight: '1.7', fontSize: '1rem' }}>
-                Dr. Eman combines proven physical health insights with deep emotional and relational coaching. Through Meta Health, she pinpoints the biological conflicts and stress patterns that manifest as physical symptoms or relationship tension.
+                Eman combines proven physical health insights with deep emotional and relational coaching. Through Meta Health, she pinpoints the biological conflicts and stress patterns that manifest as physical symptoms or relationship tension.
               </p>
               <p style={{ color: '#334155', marginBottom: '2rem', lineHeight: '1.7', fontSize: '1rem' }}>
-                Whether you are seeking personal healing, resolving conflict with your partner, or training to become a healthier version of yourself, Dr. Eman offers personalized, action-oriented guidance.
+                Whether you are seeking personal healing, resolving conflict with your partner, or training to become a healthier version of yourself, Eman offers personalized, action-oriented guidance.
               </p>
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.2rem' }}>
                 <div className="glass-card" style={{ padding: '1.2rem', display: 'flex', gap: '0.8rem', alignItems: 'center', background: '#f0f9ff' }}>
-                  <Award color="#9333ea" size={28} />
+                  <Award color="#65bd13ff" size={28} />
                   <div>
                     <h5 style={{ fontWeight: 700, fontSize: '0.95rem', color: '#0f172a' }}>Certified Practitioner</h5>
                     <span style={{ fontSize: '0.8rem', color: '#475569' }}>International Meta Health</span>
                   </div>
                 </div>
 
-                <div className="glass-card" style={{ padding: '1.2rem', display: 'flex', gap: '0.8rem', alignItems: 'center', background: '#fce7f3' }}>
-                  <Heart color="#db2777" size={28} />
+                <div className="glass-card" style={{ padding: '1.2rem', display: 'flex', gap: '0.8rem', alignItems: 'center', background: '#f0f9ff' }}>
+                  <Heart color="#df2626ff" size={28} />
                   <div>
                     <h5 style={{ fontWeight: 700, fontSize: '0.95rem', color: '#0f172a' }}>Relationship Specialist</h5>
                     <span style={{ fontSize: '0.8rem', color: '#475569' }}>Couples & Family Dynamics</span>
@@ -508,8 +506,8 @@ function App() {
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
             <div className="glass-card" style={{ padding: '2rem' }}>
-              <div style={{ background: '#f3e8ff', width: '60px', height: '60px', borderRadius: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.2rem' }}>
-                <Brain color="#9333ea" size={32} />
+              <div style={{ background: '#cefff0ff', width: '60px', height: '60px', borderRadius: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.2rem' }}>
+                <Brain color="#137734ff" size={32} />
               </div>
               <h3 style={{ fontSize: '1.3rem', fontWeight: 700, marginBottom: '0.8rem', color: '#0f172a' }}>Meta Health Analysis</h3>
               <p style={{ color: '#475569', fontSize: '0.95rem' }}>
@@ -519,7 +517,7 @@ function App() {
 
             <div className="glass-card" style={{ padding: '2rem' }}>
               <div style={{ background: '#fce7f3', width: '60px', height: '60px', borderRadius: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.2rem' }}>
-                <Heart color="#db2777" size={32} />
+                <Heart color="#df2626ff" size={32} />
               </div>
               <h3 style={{ fontSize: '1.3rem', fontWeight: 700, marginBottom: '0.8rem', color: '#0f172a' }}>Couples Therapy</h3>
               <p style={{ color: '#475569', fontSize: '0.95rem' }}>
@@ -545,7 +543,7 @@ function App() {
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
             <h2 style={{ fontSize: '2.5rem', fontWeight: 800, marginBottom: '1rem', color: '#0f172a' }}>
-              Featured <span className="gradient-text">Videos & Media</span>
+              Featured <span className="gradient-text"> <br /> Videos & Media</span>
             </h2>
             <p style={{ color: '#475569', maxWidth: '600px', margin: '0 auto', fontSize: '1.05rem' }}>
               Explore insightful video lessons, event recordings, and media appearances.
@@ -587,7 +585,7 @@ function App() {
                     }}
                   >
                     <div style={{ background: 'rgba(255,255,255,0.2)', padding: '0.8rem', borderRadius: '50%', marginBottom: '0.5rem' }}>
-                      <Play color="#db2777" size={28} />
+                      <Play color="#7c1ee7ff" size={28} />
                     </div>
                     <span style={{ fontWeight: 700, fontSize: '0.9rem' }}>Intro to Meta Health</span>
                     <span style={{ fontSize: '0.7rem', color: '#94a3b8', marginTop: '0.2rem' }}>Video not found</span>
@@ -635,7 +633,7 @@ function App() {
                     }}
                   >
                     <div style={{ background: 'rgba(255,255,255,0.2)', padding: '0.8rem', borderRadius: '50%', marginBottom: '0.5rem' }}>
-                      <Play color="#9333ea" size={28} />
+                      <Play color="#3633eaff" size={28} />
                     </div>
                     <span style={{ fontWeight: 700, fontSize: '0.9rem' }}>Relationship Mastery</span>
                     <span style={{ fontSize: '0.7rem', color: '#94a3b8', marginTop: '0.2rem' }}>Video not found</span>
@@ -720,8 +718,8 @@ function App() {
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                 <div className="glass-card" style={{ padding: '1.2rem', display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                  <div style={{ background: '#f3e8ff', padding: '0.8rem', borderRadius: '12px' }}>
-                    <Phone color="#9333ea" size={24} />
+                  <div style={{ background: '#ffffffff', padding: '0.8rem', borderRadius: '12px' }}>
+                    <Phone color="#2d9e17ff" size={24} />
                   </div>
                   <div>
                     <span style={{ display: 'block', fontSize: '0.8rem', color: '#64748b', fontWeight: 600 }}>Phone / WhatsApp</span>
@@ -730,12 +728,12 @@ function App() {
                 </div>
 
                 <div className="glass-card" style={{ padding: '1.2rem', display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                  <div style={{ background: '#fce7f3', padding: '0.8rem', borderRadius: '12px' }}>
-                    <Mail color="#db2777" size={24} />
+                  <div style={{ background: '#ffffffff', padding: '0.8rem', borderRadius: '12px' }}>
+                    <Mail color="#207aa3ff" size={24} />
                   </div>
                   <div>
                     <span style={{ display: 'block', fontSize: '0.8rem', color: '#64748b', fontWeight: 600 }}>Email Address</span>
-                    <strong style={{ fontSize: '0.95rem', color: '#0f172a' }}>contact@dremanhealth.com</strong>
+                    <strong style={{ fontSize: '0.95rem', color: '#0f172a' }}>contact@emanhealth.com</strong>
                   </div>
                 </div>
 
@@ -756,7 +754,7 @@ function App() {
                 <div style={{ textAlign: 'center', padding: '3rem 1rem' }}>
                   <CheckCircle color="#10b981" size={56} style={{ marginBottom: '1rem' }} />
                   <h3 style={{ fontSize: '1.5rem', fontWeight: 700, marginBottom: '0.5rem', color: '#0f172a' }}>Opening WhatsApp...</h3>
-                  <p style={{ color: '#475569' }}>Redirecting your message directly to Dr. Eman's WhatsApp.</p>
+                  <p style={{ color: '#475569' }}>Redirecting your message directly to Eman's WhatsApp.</p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
@@ -773,18 +771,6 @@ function App() {
                       style={{ width: '100%', padding: '12px 16px', borderRadius: '10px', background: '#f8fafc', border: '1px solid #cbd5e1', color: '#0f172a', fontWeight: 500, outline: 'none' }}
                     />
                     <input
-                      type="email"
-                      name="email"
-                      placeholder="Email Address"
-                      required
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      style={{ width: '100%', padding: '12px 16px', borderRadius: '10px', background: '#f8fafc', border: '1px solid #cbd5e1', color: '#0f172a', fontWeight: 500, outline: 'none' }}
-                    />
-                  </div>
-
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-                    <input
                       type="tel"
                       name="phone"
                       placeholder="Phone Number"
@@ -792,19 +778,8 @@ function App() {
                       onChange={handleInputChange}
                       style={{ width: '100%', padding: '12px 16px', borderRadius: '10px', background: '#f8fafc', border: '1px solid #cbd5e1', color: '#0f172a', fontWeight: 500, outline: 'none' }}
                     />
-                    <select
-                      name="service"
-                      value={formData.service}
-                      onChange={handleInputChange}
-                      style={{ width: '100%', padding: '12px 16px', borderRadius: '10px', background: '#f8fafc', border: '1px solid #cbd5e1', color: '#0f172a', fontWeight: 500, outline: 'none' }}
-                    >
-                      <option value="">Select Service</option>
-                      <option value="Meta Health Consultation">Meta Health Consultation</option>
-                      <option value="Relationship Coaching">Relationship Coaching</option>
-                      <option value="Group Workshop">Group Workshop</option>
-                    </select>
-                  </div>
 
+                  </div>
                   <textarea
                     name="message"
                     rows="4"
@@ -827,7 +802,7 @@ function App() {
 
       {/* Footer */}
       <footer style={{ borderTop: '1px solid #e2e8f0', background: '#ffffff', padding: '2rem 5%', textAlign: 'center', color: '#64748b', fontSize: '0.85rem' }}>
-        <p>© {new Date().getFullYear()} Dr. Eman - Meta Health & Relationship Specialist. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} Eman El Tobgy - Meta Health & Relationship Specialist. All rights reserved.</p>
       </footer>
     </div>
   );
