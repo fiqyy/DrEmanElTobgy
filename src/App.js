@@ -24,7 +24,7 @@ const LIVEQandA = require('./assets/vids/sample.mp4');
 
 const LOGO = require('./assets/pics/logo1.jpeg');
 
-const WHATSAPP_NUMBER = '201200096266'; // Mobile Number that recieves Whatsapp Messages
+const WHATSAPP_NUMBER = '201002227876'; // Mobile Number that recieves Whatsapp Messages
 
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -674,7 +674,7 @@ function App() {
                   </div>
                   <div>
                     <span style={{ display: 'block', fontSize: '0.8rem', color: '#64748b', fontWeight: 600 }}>Phone / WhatsApp</span>
-                    <strong style={{ fontSize: '0.95rem', color: '#0f172a' }}>+123 456 7890</strong>
+                    <strong style={{ fontSize: '0.95rem', color: '#0f172a' }}>+201002227876</strong>
                   </div>
                 </div>
 
