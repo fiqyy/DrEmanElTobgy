@@ -1,77 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
-/* =====================================================
-   DESIGN SYSTEM — DR. EMAN EL TOBGY PORTFOLIO
-   Brand Blue (exact logo colour): #1076bc
-   ===================================================== */
+/* =========================================================
+   ROYAL BLUE THEME VARIABLES & GLOBAL STYLES
+   ========================================================= */
 :root {
-  /* ── Brand Blue Palette ─────────────────────────── */
-  --blue-950: #021626;
-  --blue-900: #042033;
-  --blue-800: #073d60;
-  --blue-700: #0b5a8c;
-  --blue-600: #1076bc;  /* ← LOGO BLUE               */
-  --blue-500: #2a8dd1;
-  --blue-400: #52a6e2;
-  --blue-300: #83c1ee;
-  --blue-200: #b8dbf5;
-  --blue-100: #daeef8;
-  --blue-50:  #f0f7fd;
-
-  --primary:          #1076bc;
-  --primary-dark:     #0b5a8c;
-  --primary-darker:   #073d60;
-  --primary-light:    #2a8dd1;
-  --primary-pale:     #daeef8;
-  --primary-ultra:    #f0f7fd;
-
-  /* ── Neutral Scale ─────────────────────────────── */
-  --white:     #ffffff;
-  --gray-50:   #f8fafc;
-  --gray-100:  #f1f5f9;
-  --gray-200:  #e2e8f0;
-  --gray-300:  #cbd5e1;
-  --gray-400:  #94a3b8;
-  --gray-500:  #64748b;
-  --gray-600:  #475569;
-  --gray-700:  #334155;
-  --gray-800:  #1e293b;
-  --gray-900:  #0f172a;
-
-  /* Legacy aliases (kept for compat) */
-  --primary-blue:       #1076bc;
-  --primary-blue-hover: #0b5a8c;
-  --heading-blue:       #073d60;
-  --accent-light-blue:  #f0f7fd;
-  --border-blue:        #1076bc;
-  --border-light:       #e2e8f0;
-  --text-dark:          #1e293b;
-  --text-muted:         #475569;
-  --bg-page:            #f8fafc;
-  --bg-card:            #ffffff;
-
-  /* ── Typography ────────────────────────────────── */
-  --font-display: 'DM Serif Display', Georgia, serif;
-  --font-body:    'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-
-  /* ── Shadows ────────────────────────────────────── */
-  --shadow-sm:   0 1px 4px rgba(16, 118, 188, 0.07);
-  --shadow-md:   0 4px 16px rgba(16, 118, 188, 0.11);
-  --shadow-lg:   0 12px 36px rgba(16, 118, 188, 0.15);
-  --shadow-xl:   0 24px 64px rgba(16, 118, 188, 0.19);
-  --shadow-card: 0 2px 12px rgba(15, 23, 42, 0.07);
-
-  /* ── Radii ──────────────────────────────────────── */
-  --r-xs:   6px;
-  --r-sm:   8px;
-  --r-md:   14px;
-  --r-lg:   20px;
-  --r-xl:   28px;
-  --r-full: 9999px;
+  --primary-blue: #3b71ca;
+  /* Header & Primary Action Accent */
+  --primary-blue-hover: #2b5ea7;
+  /* Darker Blue for Hovers */
+  --heading-blue: #1d4ed8;
+  /* Titles & Subtitle Highlights */
+  --accent-light-blue: #eff6ff;
+  /* Soft Light Blue Pill Badges */
+  --border-blue: #3b71ca;
+  /* Section Divider Lines */
+  --border-light: #e2e8f0;
+  /* Soft Container Borders */
+  --text-dark: #1e293b;
+  /* High Contrast Navy Body Text */
+  --text-muted: #475569;
+  /* Subtitles & Descriptions */
+  --bg-page: #f8fafc;
+  /* Clean Light Page Background */
+  --bg-card: #ffffff;
+  /* Pure White Card Surfaces */
 }
 
-/* ── Reset ─────────────────────────────────────────── */
-*, *::before, *::after {
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -79,36 +34,38 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 16px;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   -webkit-tap-highlight-color: transparent;
 }
 
 body {
-  font-family: var(--font-body);
-  background: var(--gray-50);
-  color: var(--gray-800);
+  background-color: var(--bg-page);
+  color: var(--text-dark);
+  margin: 0;
   overflow-x: hidden;
-  line-height: 1.65;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-display);
-  line-height: 1.15;
-  color: var(--gray-900);
-}
-
-img  { display: block; max-width: 100%; }
-a    { text-decoration: none; color: inherit; }
-button { font-family: inherit; cursor: pointer; }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
-/* ── Scrollbar ─────────────────────────────────────── */
-::-webkit-scrollbar       { width: 6px; }
-::-webkit-scrollbar-track { background: var(--blue-50); }
-::-webkit-scrollbar-thumb { background: var(--primary); border-radius: var(--r-full); }
-::-webkit-scrollbar-thumb:hover { background: var(--primary-dark); }
+/* Custom Scrollbar styled for Royal Blue */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--accent-light-blue);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-blue);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--heading-blue);
+}
