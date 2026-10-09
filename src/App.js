@@ -10,8 +10,7 @@ import {
   Mail,
   Menu,
   X,
-  Award,
-  Play
+  Award
 } from 'lucide-react';
 
 /* ── Image assets ─────────────────────────────────── */
@@ -20,7 +19,7 @@ const LOGO2_IMG = require('./assets/pics/logo2.jpeg');
 const DR_SPEAKING = require('./assets/pics/sessionexplaining.jpeg');
 const TEDTALKS_IMG = require('./assets/pics/tedtalks.jpeg');
 const TV_IMG = require('./assets/pics/tv.jpeg');
-const HAFLA_IMG = require('./assets/pics/hafla w gasser.jpeg');
+// const HAFLA_IMG = require('./assets/pics/hafla w gasser.jpeg');
 const SEATS_IMG = require('./assets/pics/seats.jpeg');
 const LOGO = require('./assets/pics/logo.png');
 
