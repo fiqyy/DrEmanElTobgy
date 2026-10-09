@@ -232,7 +232,6 @@ button[type="submit"]:hover,
   text-overflow: ellipsis;
 }
 
-/* Health & Joy Gradient Text (Purple to Vibrant Pink) */
 .gradient-text {
   background: linear-gradient(135deg, #4d64b4ff 0%, #94a3f4 100%) !important;
   -webkit-background-clip: text !important;
