@@ -15,6 +15,10 @@ import {
   Activity
 }
   from 'lucide-react';
+import TEDTALKS_IMG from './assets/pics/tedtalks.jpeg';
+import TV_IMG from './assets/pics/tv.jpeg';
+import DR_SPEAKING from './assets/pics/sessionexplaining.jpeg';
+import SEATS_IMG from './assets/pics/seats.jpeg';
 
 const HERO_IMAGE_PATH = require('./assets/pics/logo1.jpeg');
 const DREMANSPEAKING = require('./assets/pics/sessionexplaining.jpeg');
@@ -438,6 +442,39 @@ function App() {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* ════════════ FEATURED MOMENTS GALLERY ════════════ */}
+      <section className="gallery-strip-section">
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <div className="section-header-block">
+            <span className="section-eyebrow">Featured Moments</span>
+            <h2 className="section-main-title">
+              Impacting Lives <span className="gradient-text">Everywhere</span>
+            </h2>
+          </div>
+
+          <div className="gallery-grid">
+            <div className="gallery-item">
+              <img src={TEDTALKS_IMG} alt="TEDx Speaker" />
+              <div className="gallery-overlay">TEDx Speaker</div>
+            </div>
+
+            <div className="gallery-item">
+              <img src={TV_IMG} alt="TV Appearance" />
+              <div className="gallery-overlay">TV Appearances</div>
+            </div>
+
+            <div className="gallery-item">
+              <img src={DR_SPEAKING} alt="Live Workshop" />
+              <div className="gallery-overlay">Live Workshops</div>
+            </div>
+
+            <div className="gallery-item">
+              <img src={SEATS_IMG} alt="Training Events" />
+              <div className="gallery-overlay">Training Events</div>
             </div>
           </div>
         </div>
