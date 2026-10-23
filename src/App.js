@@ -23,12 +23,169 @@ import SEATS_IMG from './assets/pics/seats.jpeg';
 const HERO_IMAGE_PATH = require('./assets/pics/logo1.jpeg');
 const DREMANSPEAKING = require('./assets/pics/sessionexplaining.jpeg');
 const TRAININGWORKSHOP = require('./assets/pics/tedtalks.jpeg');
-const INTROTOMETAHEALTH = require('./assets/vids/sample.mp4');
-const RELATIONSHIPMASTERY = require('./assets/vids/sample.mp4');
-const LIVEQandA = require('./assets/vids/sample.mp4');
+const INTROTOMETAHEALTH = require('./assets/vids/vid1.mp4');
+const RELATIONSHIPMASTERY = require('./assets/vids/vid2.mp4');
+const LIVEQandA = require('./assets/vids/vid3.mp4');
 const LOGO = require('./assets/pics/logo.png');
 
-const WHATSAPP_NUMBER = '201002227876'; // Mobile Number that recieves Whatsapp Messages
+const WHATSAPP_NUMBER = '201002227876'; // Mobile Number that receives WhatsApp Messages
+const EMAIL_ADDRESS = 'emandtobgy@gmail.com';
+
+const VideoPlayerWithSnippet = ({ src, altTitle, playColor = '#7c1ee7ff' }) => {
+  const [poster, setPoster] = useState('');
+  const [isPlaying, setIsPlaying] = useState(false);
+  const videoRef = React.useRef(null);
+
+  useEffect(() => {
+    if (!src) return;
+    const tempVideo = document.createElement('video');
+    tempVideo.src = `${src}#t=1.0`;
+    tempVideo.crossOrigin = 'anonymous';
+    tempVideo.muted = true;
+    tempVideo.playsInline = true;
+    tempVideo.preload = 'auto';
+
+    const handleLoadedData = () => {
+      try {
+        tempVideo.currentTime = 1.0;
+      } catch (err) {
+        // Fallback
+      }
+    };
+
+    const handleSeeked = () => {
+      try {
+        const canvas = document.createElement('canvas');
+        canvas.width = tempVideo.videoWidth || 640;
+        canvas.height = tempVideo.videoHeight || 360;
+        const ctx = canvas.getContext('2d');
+        if (ctx) {
+          ctx.drawImage(tempVideo, 0, 0, canvas.width, canvas.height);
+          const dataUrl = canvas.toDataURL('image/jpeg', 0.85);
+          if (dataUrl && dataUrl.length > 500) {
+            setPoster(dataUrl);
+          }
+        }
+      } catch (e) {
+        // Ignored
+      }
+    };
+
+    tempVideo.addEventListener('loadeddata', handleLoadedData);
+    tempVideo.addEventListener('seeked', handleSeeked);
+
+    return () => {
+      tempVideo.removeEventListener('loadeddata', handleLoadedData);
+      tempVideo.removeEventListener('seeked', handleSeeked);
+      tempVideo.src = '';
+    };
+  }, [src]);
+
+  return (
+    <div
+      style={{
+        width: '100%',
+        height: '220px',
+        borderRadius: '12px',
+        overflow: 'hidden',
+        backgroundColor: '#1e293b',
+        position: 'relative'
+      }}
+    >
+      {src ? (
+        <>
+          <video
+            ref={videoRef}
+            controls
+            preload="auto"
+            playsInline
+            poster={poster || undefined}
+            onPlay={() => setIsPlaying(true)}
+            onPause={() => setIsPlaying(false)}
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              display: 'block'
+            }}
+          >
+            <source src={`${src}#t=1.0`} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+
+          {/* Elegant preview overlay before the user starts playing */}
+          {!isPlaying && poster && (
+            <div
+              onClick={() => {
+                if (videoRef.current) {
+                  videoRef.current.play();
+                }
+              }}
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                backgroundImage: `url(${poster})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                cursor: 'pointer',
+                backgroundColor: '#1e293b'
+              }}
+            >
+              <div
+                style={{
+                  position: 'absolute',
+                  inset: 0,
+                  background: 'linear-gradient(to top, rgba(15, 23, 42, 0.45), rgba(15, 23, 42, 0.15))'
+                }}
+              />
+              <div
+                style={{
+                  position: 'relative',
+                  zIndex: 2,
+                  width: '56px',
+                  height: '56px',
+                  borderRadius: '50%',
+                  background: 'rgba(255, 255, 255, 0.92)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  boxShadow: '0 8px 24px rgba(0, 0, 0, 0.35)',
+                  transition: 'transform 0.2s ease',
+                  paddingLeft: '4px'
+                }}
+              >
+                <Play color="#2563eb" size={26} fill="#2563eb" />
+              </div>
+            </div>
+          )}
+        </>
+      ) : (
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            height: '100%',
+            color: '#ffffff'
+          }}
+        >
+          <div style={{ background: 'rgba(255,255,255,0.2)', padding: '0.8rem', borderRadius: '50%', marginBottom: '0.5rem' }}>
+            <Play color={playColor} size={28} />
+          </div>
+          <span style={{ fontWeight: 700, fontSize: '0.9rem' }}>{altTitle}</span>
+          <span style={{ fontSize: '0.7rem', color: '#94a3b8', marginTop: '0.2rem' }}>Video not found</span>
+        </div>
+      )}
+    </div>
+  );
+};
 
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -210,11 +367,11 @@ function App() {
             </div>
 
             <h1 style={{ fontSize: 'clamp(2.3rem, 5.2vw, 3.6rem)', fontWeight: 800, color: '#0f172a', lineHeight: 1.18, marginBottom: '1.2rem', letterSpacing: '-0.02em' }}>
-              Transform Your <span className="gradient-text">Emotional Health</span> & Relationships
+              Understand <span className="gradient-text">Yourself</span>. Build <span className='gradient-text'>Healthier </span>Relationships
             </h1>
 
             <p style={{ color: '#475569', fontSize: '1.08rem', lineHeight: 1.65, marginBottom: '2.2rem', fontWeight: 400 }}>
-              Integrating Meta Health principles and holistic relationship dynamics to unlock subconscious root causes, restore vitality, and build lasting interpersonal harmony.
+              Discover how your emotions, experiences, and relationship patterns shape the way you connect with others. From building stronger family bonds and nurturing the relationship between mothers and their children to creating healthier romantic and social connections, begin your journey toward greater self-awareness and more meaningful relationships.
             </p>
 
             {/* CTA Buttons */}
@@ -314,7 +471,7 @@ function App() {
               More About <span className="gradient-text"> <br />Eman ElTobgy</span>
             </h2>
             <p style={{ color: '#475569', maxWidth: '600px', margin: '0 auto', fontSize: '1.05rem' }}>
-              Dedicated to empowering individuals and couples through integrative mind-body science and relational transformation.
+              Dedicated to helping individuals understand themselves, navigate their emotions, and build healthier, more meaningful relationships.
             </p>
           </div>
 
@@ -416,13 +573,16 @@ function App() {
 
             <div>
               <h3 style={{ fontSize: '1.8rem', fontWeight: 800, marginBottom: '1.2rem', color: '#0f172a' }}>
-                Bridging Mind, Body, and Relational Wellbeing
+                Understanding <span className='gradient-text'>Yourself</span> is the First Step to Understanding Your <span className='gradient-text'>Relationships</span>
               </h3>
               <p style={{ color: '#334155', marginBottom: '1.2rem', lineHeight: '1.7', fontSize: '1rem' }}>
-                Eman combines proven physical health insights with deep emotional and relational coaching. Through Meta Health, she pinpoints the biological conflicts and stress patterns that manifest as physical symptoms or relationship tension.
+                Eman El Tobgy focuses on helping individuals explore the emotional patterns that shape their relationships and develop greater self-awareness, understanding, and healthier ways of connecting with others.
+              </p>
+              <p style={{ color: '#334155', marginBottom: '1.2rem', lineHeight: '1.7', fontSize: '1rem' }}>
+                From romantic and marital relationships to family and social connections, including the relationship between mothers and their children, her approach encourages a deeper understanding of emotional needs, communication, and everyday relationship challenges.
               </p>
               <p style={{ color: '#334155', marginBottom: '2rem', lineHeight: '1.7', fontSize: '1rem' }}>
-                Whether you are seeking personal healing, resolving conflict with your partner, or training to become a healthier version of yourself, Eman offers personalized, action-oriented guidance.
+                Because understanding yourself and others can be the beginning of more conscious, balanced, and fulfilling relationships.
               </p>
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.2rem' }}>
@@ -542,148 +702,39 @@ function App() {
 
             {/* Video 1: Intro to Meta Health */}
             <div className="glass-card" style={{ padding: '1.2rem' }}>
-              <div
-                style={{
-                  width: '100%',
-                  height: '220px',
-                  borderRadius: '12px',
-                  overflow: 'hidden',
-                  backgroundColor: '#0f172a',
-                  position: 'relative'
-                }}
-              >
-                {INTROTOMETAHEALTH ? (
-                  <video
-                    controls
-                    preload="metadata"
-                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                  >
-                    <source src={INTROTOMETAHEALTH} type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                ) : (
-                  <div
-                    style={{
-                      display: 'flex',
-                      flexDirection: 'column',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      height: '100%',
-                      color: '#ffffff'
-                    }}
-                  >
-                    <div style={{ background: 'rgba(255,255,255,0.2)', padding: '0.8rem', borderRadius: '50%', marginBottom: '0.5rem' }}>
-                      <Play color="#7c1ee7ff" size={28} />
-                    </div>
-                    <span style={{ fontWeight: 700, fontSize: '0.9rem' }}>Intro to Meta Health</span>
-                    <span style={{ fontSize: '0.7rem', color: '#94a3b8', marginTop: '0.2rem' }}>Video not found</span>
-                  </div>
-                )}
-              </div>
+              <VideoPlayerWithSnippet
+                src={INTROTOMETAHEALTH}
+                altTitle="Intro to Meta Health"
+                playColor="#7c1ee7ff"
+              />
               <h4 style={{ fontSize: '1.1rem', fontWeight: 700, marginTop: '1rem', marginBottom: '0.5rem', color: '#0f172a' }}>
                 Understanding Mind-Body Connections
               </h4>
-              <p style={{ fontSize: '0.85rem', color: '#475569' }}>
-                A deep dive into how unresolved emotional stress impacts biological health.
-              </p>
             </div>
 
             {/* Video 2: Relationship Mastery */}
             <div className="glass-card" style={{ padding: '1.2rem' }}>
-              <div
-                style={{
-                  width: '100%',
-                  height: '220px',
-                  borderRadius: '12px',
-                  overflow: 'hidden',
-                  backgroundColor: '#0f172a',
-                  position: 'relative'
-                }}
-              >
-                {RELATIONSHIPMASTERY ? (
-                  <video
-                    controls
-                    preload="metadata"
-                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                  >
-                    <source src={RELATIONSHIPMASTERY} type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                ) : (
-                  <div
-                    style={{
-                      display: 'flex',
-                      flexDirection: 'column',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      height: '100%',
-                      color: '#ffffff'
-                    }}
-                  >
-                    <div style={{ background: 'rgba(255,255,255,0.2)', padding: '0.8rem', borderRadius: '50%', marginBottom: '0.5rem' }}>
-                      <Play color="#3633eaff" size={28} />
-                    </div>
-                    <span style={{ fontWeight: 700, fontSize: '0.9rem' }}>Relationship Mastery</span>
-                    <span style={{ fontSize: '0.7rem', color: '#94a3b8', marginTop: '0.2rem' }}>Video not found</span>
-                  </div>
-                )}
-              </div>
+              <VideoPlayerWithSnippet
+                src={RELATIONSHIPMASTERY}
+                altTitle="Relationship Mastery"
+                playColor="#3633eaff"
+              />
               <h4 style={{ fontSize: '1.1rem', fontWeight: 700, marginTop: '1rem', marginBottom: '0.5rem', color: '#0f172a' }}>
                 Building Resilient Partnerships
               </h4>
-              <p style={{ fontSize: '0.85rem', color: '#475569' }}>
-                Key communication strategies to transform modern relationships.
-              </p>
             </div>
 
             {/* Video 3: Live Q&A Recording */}
             <div className="glass-card" style={{ padding: '1.2rem' }}>
-              <div
-                style={{
-                  width: '100%',
-                  height: '220px',
-                  borderRadius: '12px',
-                  overflow: 'hidden',
-                  backgroundColor: '#0f172a',
-                  position: 'relative'
-                }}
-              >
-                {LIVEQandA ? (
-                  <video
-                    controls
-                    preload="metadata"
-                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                  >
-                    <source src={LIVEQandA} type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                ) : (
-                  <div
-                    style={{
-                      display: 'flex',
-                      flexDirection: 'column',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      height: '100%',
-                      color: '#ffffff'
-                    }}
-                  >
-                    <div style={{ background: 'rgba(255,255,255,0.2)', padding: '0.8rem', borderRadius: '50%', marginBottom: '0.5rem' }}>
-                      <Play color="#0284c7" size={28} />
-                    </div>
-                    <span style={{ fontWeight: 700, fontSize: '0.9rem' }}>Live Q&A Recording</span>
-                    <span style={{ fontSize: '0.7rem', color: '#94a3b8', marginTop: '0.2rem' }}>Video not found</span>
-                  </div>
-                )}
-              </div>
+              <VideoPlayerWithSnippet
+                src={LIVEQandA}
+                altTitle="Live Q&A Recording"
+                playColor="#0284c7"
+              />
               <h4 style={{ fontSize: '1.1rem', fontWeight: 700, marginTop: '1rem', marginBottom: '0.5rem', color: '#0f172a' }}>
-                Healing Subconscious Stress
+                Live Q&A Session
               </h4>
-              <p style={{ fontSize: '0.85rem', color: '#475569' }}>
-                Answering common questions regarding emotional triggers and health.
-              </p>
             </div>
-
           </div>
         </div>
       </section>
@@ -721,7 +772,7 @@ function App() {
                   </div>
                   <div>
                     <span style={{ display: 'block', fontSize: '0.8rem', color: '#64748b', fontWeight: 600 }}>Email Address</span>
-                    <strong style={{ fontSize: '0.95rem', color: '#0f172a' }}>contact@emanhealth.com</strong>
+                    <strong style={{ fontSize: '0.95rem', color: '#0f172a' }}>{EMAIL_ADDRESS}</strong>
                   </div>
                 </div>
 
