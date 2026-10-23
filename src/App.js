@@ -23,9 +23,9 @@ import SEATS_IMG from './assets/pics/seats.jpeg';
 const HERO_IMAGE_PATH = require('./assets/pics/logo1.jpeg');
 const DREMANSPEAKING = require('./assets/pics/sessionexplaining.jpeg');
 const TRAININGWORKSHOP = require('./assets/pics/tedtalks.jpeg');
-const INTROTOMETAHEALTH = require('./assets/vids/vid1.mp4');
-const RELATIONSHIPMASTERY = require('./assets/vids/vid2.mp4');
-const LIVEQandA = require('./assets/vids/vid3.mp4');
+//const INTROTOMETAHEALTH = require('./assets/vids/vid1.mp4');
+//const RELATIONSHIPMASTERY = "https://player.cloudinary.com/embed/?cloud_name=le4531f6&public_id=vid2";
+//const LIVEQandA = require('./assets/vids/vid3.mp4');
 const LOGO = require('./assets/pics/logo.png');
 
 const WHATSAPP_NUMBER = '201002227876'; // Mobile Number that receives WhatsApp Messages
@@ -35,6 +35,66 @@ const VideoPlayerWithSnippet = ({ src, altTitle, playColor = '#7c1ee7ff' }) => {
   const [poster, setPoster] = useState('');
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = React.useRef(null);
+  const clickTimeoutRef = React.useRef(null);
+
+  const togglePlayPause = () => {
+    const video = videoRef.current;
+    if (!video) return;
+    if (video.paused) {
+      video.play().catch(() => { });
+    } else {
+      video.pause();
+    }
+  };
+
+  const handleVideoClick = (e) => {
+    e.stopPropagation();
+    if (clickTimeoutRef.current) {
+      clearTimeout(clickTimeoutRef.current);
+      clickTimeoutRef.current = null;
+    }
+
+    clickTimeoutRef.current = setTimeout(() => {
+      togglePlayPause();
+      clickTimeoutRef.current = null;
+    }, 250);
+  };
+
+  const handleVideoDoubleClick = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (clickTimeoutRef.current) {
+      clearTimeout(clickTimeoutRef.current);
+      clickTimeoutRef.current = null;
+    }
+
+    const video = videoRef.current;
+    if (!video) return;
+
+    if (!document.fullscreenElement && !document.webkitFullscreenElement) {
+      if (video.requestFullscreen) {
+        video.requestFullscreen().catch(() => { });
+      } else if (video.webkitRequestFullscreen) {
+        video.webkitRequestFullscreen();
+      } else if (video.webkitEnterFullscreen) {
+        video.webkitEnterFullscreen(); // iOS Safari
+      }
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen().catch(() => { });
+      } else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen();
+      }
+    }
+  };
+
+  useEffect(() => {
+    return () => {
+      if (clickTimeoutRef.current) {
+        clearTimeout(clickTimeoutRef.current);
+      }
+    };
+  }, []);
 
   useEffect(() => {
     if (!src) return;
@@ -97,6 +157,8 @@ const VideoPlayerWithSnippet = ({ src, altTitle, playColor = '#7c1ee7ff' }) => {
           <video
             ref={videoRef}
             controls
+            controlsList="nodownload"
+            onContextMenu={(e) => e.preventDefault()}
             preload="auto"
             playsInline
             poster={poster || undefined}
@@ -113,14 +175,28 @@ const VideoPlayerWithSnippet = ({ src, altTitle, playColor = '#7c1ee7ff' }) => {
             Your browser does not support the video tag.
           </video>
 
+          {/* Clickable overlay over video viewport (leaving the bottom 52px for native controls bar) */}
+          <div
+            onClick={handleVideoClick}
+            onDoubleClick={handleVideoDoubleClick}
+            onContextMenu={(e) => e.preventDefault()}
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: '52px',
+              cursor: 'pointer',
+              zIndex: 1
+            }}
+          />
+
           {/* Elegant preview overlay before the user starts playing */}
           {!isPlaying && poster && (
             <div
-              onClick={() => {
-                if (videoRef.current) {
-                  videoRef.current.play();
-                }
-              }}
+              onClick={handleVideoClick}
+              onDoubleClick={handleVideoDoubleClick}
+              onContextMenu={(e) => e.preventDefault()}
               style={{
                 position: 'absolute',
                 top: 0,
@@ -134,7 +210,8 @@ const VideoPlayerWithSnippet = ({ src, altTitle, playColor = '#7c1ee7ff' }) => {
                 alignItems: 'center',
                 justifyContent: 'center',
                 cursor: 'pointer',
-                backgroundColor: '#1e293b'
+                backgroundColor: '#1e293b',
+                zIndex: 2
               }}
             >
               <div
@@ -147,7 +224,7 @@ const VideoPlayerWithSnippet = ({ src, altTitle, playColor = '#7c1ee7ff' }) => {
               <div
                 style={{
                   position: 'relative',
-                  zIndex: 2,
+                  zIndex: 3,
                   width: '56px',
                   height: '56px',
                   borderRadius: '50%',
@@ -701,44 +778,43 @@ function App() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
 
             {/* Video 1: Intro to Meta Health */}
-            <div className="glass-card" style={{ padding: '1.2rem' }}>
+            <div className="glass-card" style={{ padding: '1.2rem', display: 'flex', flexDirection: 'column' }}>
               <VideoPlayerWithSnippet
-                src={INTROTOMETAHEALTH}
-                altTitle="Intro to Meta Health"
-                playColor="#7c1ee7ff"
+                src="https://res.cloudinary.com/le4531f6/video/upload/vid1.mp4"
+                altTitle="Beyond Awareness: The Journey to Lasting Change"
+                playColor="#2563eb"
               />
               <h4 style={{ fontSize: '1.1rem', fontWeight: 700, marginTop: '1rem', marginBottom: '0.5rem', color: '#0f172a' }}>
-                Understanding Mind-Body Connections
+                Beyond Awareness: The Journey to Lasting Change
               </h4>
             </div>
 
             {/* Video 2: Relationship Mastery */}
-            <div className="glass-card" style={{ padding: '1.2rem' }}>
+            <div className="glass-card" style={{ padding: '1.2rem', display: 'flex', flexDirection: 'column' }}>
               <VideoPlayerWithSnippet
-                src={RELATIONSHIPMASTERY}
-                altTitle="Relationship Mastery"
-                playColor="#3633eaff"
+                src="https://res.cloudinary.com/le4531f6/video/upload/vid2.mp4"
+                altTitle="A Personal Journey Toward Self-Awareness and Healthier Relationships"
+                playColor="#2563eb"
               />
               <h4 style={{ fontSize: '1.1rem', fontWeight: 700, marginTop: '1rem', marginBottom: '0.5rem', color: '#0f172a' }}>
-                Building Resilient Partnerships
+                A Personal Journey Toward Self-Awareness and Healthier Relationships
               </h4>
             </div>
 
             {/* Video 3: Live Q&A Recording */}
-            <div className="glass-card" style={{ padding: '1.2rem' }}>
+            <div className="glass-card" style={{ padding: '1.2rem', display: 'flex', flexDirection: 'column' }}>
               <VideoPlayerWithSnippet
-                src={LIVEQandA}
-                altTitle="Live Q&A Recording"
-                playColor="#0284c7"
+                src="https://res.cloudinary.com/le4531f6/video/upload/vid3.mp4"
+                altTitle="Real Stories. Meaningful Change."
+                playColor="#2563eb"
               />
               <h4 style={{ fontSize: '1.1rem', fontWeight: 700, marginTop: '1rem', marginBottom: '0.5rem', color: '#0f172a' }}>
-                Live Q&A Session
+                Real Stories. Meaningful Change.
               </h4>
             </div>
           </div>
         </div>
       </section>
-
       {/* 5. CONTACT & BOOKING SECTION */}
       <section id="contact" style={{ padding: '90px 5%', position: 'relative', zIndex: 1 }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
