@@ -780,7 +780,7 @@ function App() {
             {/* Video 1: Intro to Meta Health */}
             <div className="glass-card" style={{ padding: '1.2rem', display: 'flex', flexDirection: 'column' }}>
               <VideoPlayerWithSnippet
-                src="https://res.cloudinary.com/le4531f6/video/upload/vid1.mp4"
+                src="https://res.cloudinary.com/le4531f6/video/upload/vid3.mp4"
                 altTitle="Beyond Awareness: The Journey to Lasting Change"
                 playColor="#2563eb"
               />
@@ -804,7 +804,7 @@ function App() {
             {/* Video 3: Live Q&A Recording */}
             <div className="glass-card" style={{ padding: '1.2rem', display: 'flex', flexDirection: 'column' }}>
               <VideoPlayerWithSnippet
-                src="https://res.cloudinary.com/le4531f6/video/upload/vid3.mp4"
+                src="https://res.cloudinary.com/le4531f6/video/upload/vid1.mp4"
                 altTitle="Real Stories. Meaningful Change."
                 playColor="#2563eb"
               />
