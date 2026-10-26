@@ -17,12 +17,14 @@ import {
   from 'lucide-react';
 import TEDTALKS_IMG from './assets/pics/tedtalks.jpeg';
 import TV_IMG from './assets/pics/tv.jpeg';
-import DR_SPEAKING from './assets/pics/sessionexplaining.jpeg';
 import SEATS_IMG from './assets/pics/seats.jpeg';
 
 const HERO_IMAGE_PATH = require('./assets/pics/logo1.jpeg');
-const DREMANSPEAKING = require('./assets/pics/sessionexplaining.jpeg');
-const TRAININGWORKSHOP = require('./assets/pics/tedtalks.jpeg');
+const DOVERSESSION = require('./assets/pics/doverspeaker.jpeg');
+const LIVESSESION = require('./assets/pics/live session.jpeg');
+const DREMANSPEAKING = require('./assets/pics/liveworkshop.jpeg');
+
+
 //const INTROTOMETAHEALTH = require('./assets/vids/vid1.mp4');
 //const RELATIONSHIPMASTERY = "https://player.cloudinary.com/embed/?cloud_name=le4531f6&public_id=vid2";
 //const LIVEQandA = require('./assets/vids/vid3.mp4');
@@ -613,7 +615,7 @@ function App() {
                 }}
               >
                 <img
-                  src={TRAININGWORKSHOP}
+                  src={DOVERSESSION}
                   alt="Training Workshop"
                   style={{
                     width: '100%',
@@ -657,6 +659,9 @@ function App() {
               </p>
               <p style={{ color: '#334155', marginBottom: '1.2rem', lineHeight: '1.7', fontSize: '1rem' }}>
                 From romantic and marital relationships to family and social connections, including the relationship between mothers and their children, her approach encourages a deeper understanding of emotional needs, communication, and everyday relationship challenges.
+              </p>
+              <p style={{ color: '#334155', marginBottom: '2rem', lineHeight: '1.7', fontSize: '1rem' }}>
+                Beyond her work with individuals, Eman has participated in various conferences and seminars related to children, university students, and education. She has also served as an official sponsor of several conferences, reflecting her engagement with community initiatives and her commitment to supporting awareness, learning, and personal development.
               </p>
               <p style={{ color: '#334155', marginBottom: '2rem', lineHeight: '1.7', fontSize: '1rem' }}>
                 Because understanding yourself and others can be the beginning of more conscious, balanced, and fulfilling relationships.
@@ -705,7 +710,7 @@ function App() {
             </div>
 
             <div className="gallery-item">
-              <img src={DR_SPEAKING} alt="Live Workshop" />
+              <img src={LIVESSESION} alt="Live Workshop" />
               <div className="gallery-overlay">Live Workshops</div>
             </div>
 
