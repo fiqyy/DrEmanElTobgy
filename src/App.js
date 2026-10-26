@@ -442,15 +442,15 @@ function App() {
                 marginBottom: '1.4rem'
               }}
             >
-              Certified Meta Health & Relationship Trainer
+              Certified Self Empowerment & Relationship Trainer
             </div>
 
             <h1 style={{ fontSize: 'clamp(2.3rem, 5.2vw, 3.6rem)', fontWeight: 800, color: '#0f172a', lineHeight: 1.18, marginBottom: '1.2rem', letterSpacing: '-0.02em' }}>
-              Understand <span className="gradient-text">Yourself</span>. Build <span className='gradient-text'>Healthier </span>Relationships
+              Understand <span className="gradient-text">Yourself.</span> Build <span className='gradient-text'>Healthier </span>Relationships
             </h1>
 
             <p style={{ color: '#475569', fontSize: '1.08rem', lineHeight: 1.65, marginBottom: '2.2rem', fontWeight: 400 }}>
-              Discover how your emotions, experiences, and relationship patterns shape the way you connect with others. From building stronger family bonds and nurturing the relationship between mothers and their children to creating healthier romantic and social connections, begin your journey toward greater self-awareness and more meaningful relationships.
+              Discover how your emotions, experiences, and relationship patterns shape the way you connect with others. From building stronger family bonds and nurturing the relationship between mothers and their children to creating healthier social connections, begin your journey toward greater self-awareness and more meaningful relationships.
             </p>
 
             {/* CTA Buttons */}
@@ -658,7 +658,7 @@ function App() {
                 Eman El Tobgy focuses on helping individuals explore the emotional patterns that shape their relationships and develop greater self-awareness, understanding, and healthier ways of connecting with others.
               </p>
               <p style={{ color: '#334155', marginBottom: '1.2rem', lineHeight: '1.7', fontSize: '1rem' }}>
-                From romantic and marital relationships to family and social connections, including the relationship between mothers and their children, her approach encourages a deeper understanding of emotional needs, communication, and everyday relationship challenges.
+                From marital relationships to family and social connections, including the relationship between mothers and their children, her approach encourages a deeper understanding of emotional needs, communication, and everyday relationship challenges.
               </p>
               <p style={{ color: '#334155', marginBottom: '2rem', lineHeight: '1.7', fontSize: '1rem' }}>
                 Beyond her work with individuals, Eman has participated in various conferences and seminars related to children, university students, and education. She has also served as an official sponsor of several conferences, reflecting her engagement with community initiatives and her commitment to supporting awareness, learning, and personal development.
@@ -679,7 +679,7 @@ function App() {
                 <div className="glass-card" style={{ padding: '1.2rem', display: 'flex', gap: '0.8rem', alignItems: 'center', background: '#f0f9ff' }}>
                   <Heart color="#df2626ff" size={28} />
                   <div>
-                    <h5 style={{ fontWeight: 700, fontSize: '0.95rem', color: '#0f172a' }}>Relationship Specialist</h5>
+                    <h5 style={{ fontWeight: 700, fontSize: '0.95rem', color: '#0f172a' }}>Relationship Advisor</h5>
                     <span style={{ fontSize: '0.8rem', color: '#475569' }}>Couples & Family Dynamics</span>
                   </div>
                 </div>
@@ -749,9 +749,9 @@ function App() {
               <div style={{ background: '#fce7f3', width: '60px', height: '60px', borderRadius: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.2rem' }}>
                 <Heart color="#df2626ff" size={32} />
               </div>
-              <h3 style={{ fontSize: '1.3rem', fontWeight: 700, marginBottom: '0.8rem', color: '#0f172a' }}>Couples Therapy</h3>
+              <h3 style={{ fontSize: '1.3rem', fontWeight: 700, marginBottom: '0.8rem', color: '#0f172a' }}>Relationship Advisory</h3>
               <p style={{ color: '#475569', fontSize: '0.95rem' }}>
-                Rebuilding emotional safety, intimacy, and effective communication channels for couples.
+                Professional guidance for individuals and couples seeking to improve relationships, resolve conflicts, and build healthier connections.
               </p>
             </div>
 
