@@ -790,7 +790,7 @@ function App() {
                 muted
                 playsinline
                 controls
-                src="https://res.cloudinary.com/le4531f6/video/upload/vid3.mp4"
+                src="https://res.cloudinary.com/le4531f6/video/upload/v1792785380/vid3.mp4" type="video/mp4"
                 altTitle="Beyond Awareness: The Journey to Lasting Change"
                 playColor="#2563eb"
               />
@@ -807,7 +807,7 @@ function App() {
                 muted
                 playsinline
                 controls
-                src="https://res.cloudinary.com/le4531f6/video/upload/vid2.mp4"
+                src="https://res.cloudinary.com/le4531f6/video/upload/v1792785052/vid2.mp4" type="video/mp4"
                 altTitle="A Personal Journey Toward Self-Awareness and Healthier Relationships"
                 playColor="#2563eb"
               />
@@ -825,7 +825,7 @@ function App() {
                 playsinline
                 controls
                 preload="metadata"
-                src="https://res.cloudinary.com/le4531f6/video/upload/vid1.mp4"
+                src="https://res.cloudinary.com/le4531f6/video/upload/v1792787232/vid1.mp4" type="video/mp4"
                 altTitle="Real Stories. Meaningful Change."
                 playColor="#2563eb"
               />
