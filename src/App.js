@@ -15,6 +15,7 @@ import {
   Activity
 }
   from 'lucide-react';
+
 import TEDTALKS_IMG from './assets/pics/tedtalks.jpeg';
 import TV_IMG from './assets/pics/tv.jpeg';
 import SEATS_IMG from './assets/pics/seats.jpeg';
@@ -24,15 +25,13 @@ const DOVERSESSION = require('./assets/pics/doverspeaker.jpeg');
 const LIVESSESION = require('./assets/pics/live session.jpeg');
 const DREMANSPEAKING = require('./assets/pics/liveworkshop.jpeg');
 //const DR_EMAN_PROFILE = require('./assets/pics/prof pic.jpeg');
-
-
 //const INTROTOMETAHEALTH = require('./assets/vids/vid1.mp4');
 //const RELATIONSHIPMASTERY = "https://player.cloudinary.com/embed/?cloud_name=le4531f6&public_id=vid2";
 //const LIVEQandA = require('./assets/vids/vid3.mp4');
 const LOGO = require('./assets/pics/logo.png');
-
 const WHATSAPP_NUMBER = '201002227876'; // Mobile Number that receives WhatsApp Messages
 const EMAIL_ADDRESS = 'emandtobgy@gmail.com';
+
 
 const VideoPlayerWithSnippet = ({ src, altTitle, playColor = '#7c1ee7ff' }) => {
   const [poster, setPoster] = useState('');
@@ -775,7 +774,7 @@ function App() {
                   <Award color="#65bd13ff" size={28} />
                   <div>
                     <h5 style={{ fontWeight: 700, fontSize: '0.95rem', color: '#0f172a' }}>Certified Trainer</h5>
-                    <span style={{ fontSize: '0.8rem', color: '#475569' }}>International Meta Health</span>
+                    <span style={{ fontSize: '0.8rem', color: '#475569' }}>Meta Health Foundation</span>
                   </div>
                 </div>
 
@@ -862,6 +861,7 @@ function App() {
               <div style={{ background: '#e0f2fe', width: '60px', height: '60px', borderRadius: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.2rem' }}>
                 <Sparkles color="#0284c7" size={32} />
               </div>
+
               <h3 style={{ fontSize: '1.3rem', fontWeight: 700, marginBottom: '0.8rem', color: '#0f172a' }}>Personal Transformation</h3>
               <p style={{ color: '#475569', fontSize: '0.95rem' }}>
                 Guided 1-on-1 coaching for emotional resilience, confidence, and self-realization.
