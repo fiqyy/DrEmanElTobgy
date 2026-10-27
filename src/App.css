@@ -233,9 +233,17 @@ button[type="submit"]:hover,
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #4d64b4ff 0%, #94a3f4 100%) !important;
+  background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 50%, #06b6d4 100%) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
+}
+
+.gradient-text-vibrant {
+  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 45%, #0284c7 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  display: inline-block;
+  filter: drop-shadow(0 2px 8px rgba(59, 130, 246, 0.15));
 }
 
 

@@ -23,6 +23,7 @@ const HERO_IMAGE_PATH = require('./assets/pics/logo1.jpeg');
 const DOVERSESSION = require('./assets/pics/doverspeaker.jpeg');
 const LIVESSESION = require('./assets/pics/live session.jpeg');
 const DREMANSPEAKING = require('./assets/pics/liveworkshop.jpeg');
+//const DR_EMAN_PROFILE = require('./assets/pics/prof pic.jpeg');
 
 
 //const INTROTOMETAHEALTH = require('./assets/vids/vid1.mp4');
@@ -554,6 +555,74 @@ function App() {
             </p>
           </div>
 
+          {
+            /* 
+            Dr. Eman Banner Picture Frame
+            <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '3.5rem' }}>
+              <div
+                className="glass-card"
+                style={{
+                  width: '100%',
+                  maxWidth: '900px',
+                  padding: '10px',
+                  borderRadius: '24px',
+                  background: '#ffffff',
+                  border: '1.5px solid rgba(62, 188, 238, 0.4)',
+                  boxShadow: '0 15px 35px -8px rgba(15, 23, 42, 0.1), 0 0 25px rgba(62, 188, 238, 0.12)',
+                  position: 'relative'
+                }}
+              >
+                <div
+                  style={{
+                    width: '100%',
+                    height: '320px',
+                    borderRadius: '18px',
+                    overflow: 'hidden',
+                    position: 'relative',
+                    backgroundColor: '#f8fafc'
+                  }}
+                >
+                  <img
+                    src={DR_EMAN_PROFILE}
+                    alt="Dr. Eman El Tobgy"
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      objectPosition: 'center 20%',
+                      display: 'block',
+                      transition: 'transform 0.4s ease'
+                    }}
+                    onMouseOver={(e) => { e.currentTarget.style.transform = 'scale(1.04)'; }}
+                    onMouseOut={(e) => { e.currentTarget.style.transform = 'scale(1)'; }}
+                    onError={(e) => {
+                      e.currentTarget.style.display = 'none';
+                      if (e.currentTarget.nextElementSibling) {
+                        e.currentTarget.nextElementSibling.style.display = 'flex';
+                      }
+                    }}
+                  />
+                  <div
+                    style={{
+                      display: 'none',
+                      flexDirection: 'column',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      height: '100%',
+                      padding: '1rem',
+                      textAlign: 'center',
+                      backgroundColor: '#f1f5f9'
+                    }}
+                  >
+                    <span style={{ fontSize: '0.9rem', fontWeight: 700, color: '#0f172a' }}>Dr. Eman El Tobgy</span>
+                    <span style={{ fontSize: '0.75rem', color: '#64748b', marginTop: '0.2rem' }}>Profile Image</span>
+                  </div>
+                </div>
+              </div>
+            </div> 
+            */
+          }
+
           <div className="about-grid" style={{ display: 'grid', gridTemplateColumns: '0.9fr 1.1fr', gap: '3.5rem', alignItems: 'center' }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
 
@@ -651,8 +720,42 @@ function App() {
             </div>
 
             <div>
-              <h3 style={{ fontSize: '1.8rem', fontWeight: 800, marginBottom: '1.2rem', color: '#0f172a' }}>
-                Understanding <span className='gradient-text'>Yourself</span> is the First Step to Understanding Your <span className='gradient-text'>Relationships</span>
+              <h3
+                style={{
+                  fontSize: '2rem',
+                  fontWeight: 800,
+                  marginBottom: '1.4rem',
+                  color: '#0f172a',
+                  lineHeight: 1.35,
+                  letterSpacing: '-0.02em'
+                }}
+              >
+                Understanding{' '}
+                <span
+                  style={{
+                    background: 'linear-gradient(135deg, #1d4ed8 0%, #38bdf8 100%)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    display: 'inline-block',
+                    filter: 'drop-shadow(0 2px 10px rgba(59, 130, 246, 0.22))',
+                    fontWeight: 850
+                  }}
+                >
+                  Yourself
+                </span>{' '}
+                is the First Step to Understanding Your{' '}
+                <span
+                  style={{
+                    background: 'linear-gradient(135deg, #2563eb 0%, #06b6d4 100%)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    display: 'inline-block',
+                    filter: 'drop-shadow(0 2px 10px rgba(6, 182, 212, 0.22))',
+                    fontWeight: 850
+                  }}
+                >
+                  Relationships
+                </span>
               </h3>
               <p style={{ color: '#334155', marginBottom: '1.2rem', lineHeight: '1.7', fontSize: '1rem' }}>
                 Eman El Tobgy focuses on helping individuals explore the emotional patterns that shape their relationships and develop greater self-awareness, understanding, and healthier ways of connecting with others.
@@ -671,7 +774,7 @@ function App() {
                 <div className="glass-card" style={{ padding: '1.2rem', display: 'flex', gap: '0.8rem', alignItems: 'center', background: '#f0f9ff' }}>
                   <Award color="#65bd13ff" size={28} />
                   <div>
-                    <h5 style={{ fontWeight: 700, fontSize: '0.95rem', color: '#0f172a' }}>Certified Practitioner</h5>
+                    <h5 style={{ fontWeight: 700, fontSize: '0.95rem', color: '#0f172a' }}>Certified Trainer</h5>
                     <span style={{ fontSize: '0.8rem', color: '#475569' }}>International Meta Health</span>
                   </div>
                 </div>
