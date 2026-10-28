@@ -851,10 +851,10 @@ function App() {
               <div style={{ background: '#fce7f3', width: '60px', height: '60px', borderRadius: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.2rem' }}>
                 <Heart color="#df2626ff" size={32} />
               </div>
-              <h3 style={{ fontSize: '1.3rem', fontWeight: 700, marginBottom: '0.8rem', color: '#0f172a' }}>Relationship Advisory</h3>
+              <h3 style={{ fontSize: '1.3rem', fontWeight: 700, marginBottom: '0.8rem', color: '#0f172a' }}>Relationship Awareness & Personal Growth
+              </h3>
               <p style={{ color: '#475569', fontSize: '0.95rem' }}>
-                Professional guidance for individuals and couples seeking to improve relationships, resolve conflicts, and build healthier connections.
-              </p>
+                Helping individuals understand their emotions, improve communication, and build healthier relationships with family, children, and others.              </p>
             </div>
 
             <div className="glass-card" style={{ padding: '2rem' }}>
